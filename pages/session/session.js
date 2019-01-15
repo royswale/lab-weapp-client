@@ -63,5 +63,18 @@ Page({
         });
       }
     });
-  }
+  },
+  onGotUserInfo(e) {
+    console.log(e.detail)
+    console.log(e.detail.errMsg)
+    console.log(e.detail.userInfo)
+    console.log(e.detail.rawData)
+
+    this.setData({
+      status: 'success',
+      hintLine1: '成功获取会话',
+      hintLine2: e.detail.userInfo.nickName,
+      avatarUrl: e.detail.userInfo.avatarUrl
+    });
+  },
 });
